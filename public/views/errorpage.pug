@@ -1,0 +1,11 @@
+extends template.pug
+
+block title
+	title error | Hoppala!
+
+block content
+	div.row
+		div.alert.alert-danger.fade.in(role='alert')
+			span #{error}
+				a.text-danger(href='/')
+					strong &nbsp;go home

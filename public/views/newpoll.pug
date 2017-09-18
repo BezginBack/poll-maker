@@ -1,0 +1,39 @@
+extends template.pug
+
+block title
+    title New Poll | Hoppala!
+
+block content
+    script(src='/controllers/formEvents.js')
+    div.container-fluid
+        div.user-form
+            form#userform(role='form')
+                div.row
+                    div.form-group.has-feedback#titlebox(data-success='0')
+                        label(for='title') Title
+                        input.form-control#title(type='text' name='title' placeholder='better give a title')
+                        span.glyphicon.form-control-feedback(aria-hidden='true')
+                div.row
+                    div.form-group.has-feedback#questionbox(data-success='0')
+                        label(for='question') Question
+                        input.form-control#question(type='text' name='question' placeholder='a cool question')
+                        span.glyphicon.form-control-feedback(aria-hidden='true')
+                div.row
+                    div.table-responsive
+                        label Options
+                        table.table#tab_logic
+                            tr.hidden#addr0(data-id='0')
+                                td.tdleft(data-name='option')
+                                    div.form-group.has-feedback.options(data-success='0')
+                                        input.form-control(type='text' name='option0' placeholder='an option')
+                                        span.glyphicon.form-control-feedback(aria-hidden='true')
+                                td.tdright(data-name='del')
+                                    button.btn.btn-danger.glyphicon.glyphicon-remove.row-remove
+                        a.btn.btn-primary.pull-right#add_row Add Option
+                div.row
+                    div.form-group.buttons
+                        div.col-sm-6
+                             button.btn.btn-success.btn-lg.btn-block.text-center#savePoll(type='button') Save
+                        div.col-sm-6
+                             a.btn.btn-danger.btn-lg.btn-block.text-center#cancelPoll(href='/intersection') Cancel
+                div.row.alertdiv

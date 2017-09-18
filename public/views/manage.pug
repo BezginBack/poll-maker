@@ -1,0 +1,17 @@
+extends template.pug
+
+block title
+    title Administrator | Hoppala!
+
+block content
+    div.container-fluid
+        if items != undefined
+            each item in items
+                div.panel
+                    div #{item}
+                    div
+                        a(href='/clean/' + item._id)
+                            span.glyphicon.glyphicon-trash(aria-hidden='true')
+                    div
+                        a(href='/restore/' + item._id)
+                            span.glyphicon.glyphicon-import(aria-hidden='true')

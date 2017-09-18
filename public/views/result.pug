@@ -1,0 +1,13 @@
+extends template.pug
+
+block title
+    title Your Results | Hoppala!
+
+block content
+    script(src='/controllers/userResultEvent.js')
+    script(src='/controllers/chartObjects.js')
+    div.alertdiv
+    div.container-fluid.header-result-page(data-user=username)
+    div.container-fluid.profile-canvas
+        canvas#result
+    div.container-fluid.poll-panels

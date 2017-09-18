@@ -1,0 +1,35 @@
+extends template.pug
+
+block title
+    title | Hoppala!
+    
+block content
+    script(src='/controllers/pollLoadEvent.js')
+    script(src='/controllers/chartObjects.js')
+    div.pop-over
+        div#copy copy to clipboard
+    div.alertdiv
+    if (username)
+        div.data-name(data-name=username)
+    else
+        div.data-name
+    div.container-fluid.header-poll-page(data-user=user data-title=polltitle)
+        div.row
+            label.text-info
+        div.row
+            p.text-muted
+    div.container-fluid.options-option
+    div.container-fluid.bar-canvas
+            canvas#canvas-bar
+    div.container-fluid.share-url
+        div.row
+            label.text-info
+            p.text-muted
+    div.container-fluid.footer-buttons
+        div.row
+            div.col-sm-2
+                a.btn
+            div.col-sm-2
+                a.btn
+            div.col-sm-2
+        div.row
