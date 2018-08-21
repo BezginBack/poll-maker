@@ -6,7 +6,7 @@ var router = require('./app/router/router.js');
 var bodyParser = require("body-parser");
 var app = express();
 var port = process.env.PORT || 8080;
-//require('dotenv').load();
+
 require('./app/config/passport')(passport);
 
 mongoose.connect(process.env.MONGO_URI, {useMongoClient: true});
