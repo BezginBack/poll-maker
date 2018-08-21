@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
 html {
-  height : 100%;
+  height : 120%;
 }
+
 body {
   background : lightgray;
   color : black;
@@ -15,30 +16,43 @@ a, a:hover, a:visited, a:active, a:focus {
   color : black;
 }
 
-.menu {
-  padding : 0;
-  text-align : center;
+.top,
+.main,
+.line,
+.waiting-line,
+.footer {
+  padding: 0;  
 }
 
-.menu:hover {
+.top {
+  width : 100%;
+  margin : 0 auto;
+  height : 10%;
+}
+
+.top .menu {
+  width : 70%;
+  margin : 0 auto;
+  height : 100%;
+}
+
+.top .menu .section,
+.top .menu .section a {
+  display: block;
+  height: 100%;
+  padding: 2%;
+}
+
+.top .menu .section .user-link {
+  float: left;
+}
+
+.top .menu .section a:hover {
   background : gray;
   cursor : pointer;
 }
 
-h5 {
-  line-height : 1.8em;
-}
-
-.top {
-  width : 70%;
-  margin : auto;
-  margin-top : 2%;
-  height : auto;
-  font-weight : bold;
-}
-
 .line {
-  padding : 0;
   margin : 0;
   border-top : 1px solid white;
   opacity : .8;
@@ -46,106 +60,128 @@ h5 {
 
 .waiting-line {
   display : none; 
-  padding : 0;
   margin : 0;
   height: 2px;
   opacity : .8;
 }
 
 .main {
-  width : 70%;
-  padding : 0;
-  min-height : 90%;
-  margin : auto;
-  margin-top : 1%;
-}
-
-.footer {
   width : 100%;
-  height : 15%;
-  margin : auto;
+  min-height: 90%;
+}
+
+.main .holder {
+  width: 70%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.main .holder .panel {
   margin-top : 1%;
-  border-top : 1px solid white;
-  background : gray;
-}
-
-.foot {
-  width : 70%;
-  margin : auto;
-  margin-top : 3%;
-  font-size : 1.2em;
-}
-
-.panel{
-  margin-bottom : 3px;
   border-radius : 0;
+  margin-bottom: 0;
 }
 
-.panel:hover{
-  border-radius : 0;
+.main .holder .panel:hover {
   background : gray;
   cursor : pointer;
 }
 
-.panel-heading{
-  margin : 0;
-  border-radius : 0;
+.main .holder .panel .panel-heading p {
   font-weight : bold;
 }
 
-.panel-heading:hover{
-  background : gray;
-}
-
-.panel-footer {
+.main .holder .panel .panel-footer {
   font-size : 8pt;
 }
 
-.user-form{
-  margin : auto;
-  margin-top : 5%;
-  width : 50%;
-  font-family : 'Open Sans Condensed', sans-serif;
+.main .holder .header-poll-page {
+  font-size: xx-large;
+  margin-top: 5%;
 }
 
-.form-control, .btn{
+.main .holder .share-url {
+  font-size: large;
+  margin-top: 5%;
+}
+
+.main .holder .options-option,
+.main .holder .bar-canvas {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 5%;
+  font-size: large;
+}
+
+.main .holder .options-option .each-option,
+.main .holder .share-url p, 
+#copy {
+  cursor : pointer; 
+}
+
+.main .holder .footer-buttons {
+  font-size: large;  
+}
+
+.main .holder .footer-buttons .btn {
+  border-radius: 0;  
+}
+
+.main .holder .footer-buttons p:hover{
+  text-decoration : underline; 
+}
+
+.main .holder .bar-canvas {
+  display : none;
+}
+
+.main .holder .user-form {
+  width : 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.main .holder .user-form #userform .row .form-group .form-control,
+.main .holder .user-form #userform .row .table-responsive .btn,
+.main .holder .user-form #userform .row .form-group .btn {
   border-radius : 0;
 }
 
-.form-control{
+.main .holder .user-form #userform .row .form-group .form-control .form-control{
   border : 1px solid gray;
 }
 
-.buttons{
-  margin : auto;
-  margin-top : 2%;
+.main .holder .user-form #userform .row .form-group .btn {
+  margin-top: 5%;
 }
 
-.list-group-item {
-  border-radius : 0;
-  font-size : 2em; 
+.main .holder .profile-canvas {
+  min-height: 300px;
 }
 
-.fcc {
-  color : green; 
+.footer {
+  width: 100%;
+  height : 19%;
+  border-top : 1px solid white;
+  background : gray;
 }
 
-.header-poll-page {
-  margin : auto;
-  margin-top : 5%;
-  width : 70%;
-  font-family : 'Open Sans Condensed', sans-serif;
-  font-size : 14pt;
+.footer .foot {
+  width : 100%;
+  margin : 0 auto;
+  height : 100%;
+  padding: 5%;
+  font-size: large;
 }
 
-.footer-buttons {
-  margin : auto;
-  margin-top : 1%;
-  width : 75%;
+.footer .foot a {
+  display: block;
+  height: 100%;
 }
 
-.footer-buttons p:hover{
-  text-decoration : underline; 
+.footer .foot a:hover {
+  background: black;
+  color: white;
 }
 
 .pop-over {
@@ -175,15 +211,6 @@ h5 {
   background : #f80;
 }
 
-.options-option {
-  margin : auto;
-  margin-top : 3%;
-  width : 60%;
-  min-height : 200px;
-  font-family : 'Open Sans Condensed', sans-serif;
-  font-size : 14pt;
-}
-
 .hidetool {
   display : none;
   position : absolute;
@@ -193,47 +220,9 @@ h5 {
   color : gray;
 }
 
-.each-option {
-  cursor : pointer; 
-}
-
-.bar-canvas {
-  display : none;
-  width : 75%;
-  height : 200px;
-  margin : auto;
-  margin-top : 3%;
-}
-
-.share-url {
-  margin : auto;
-  margin-top : 5%;
-  width : 70%;
-  font-family : 'Open Sans Condensed', sans-serif;
-  font-size : 12pt;
-}
-
-.share-url p, #copy {
-  cursor : pointer; 
-}
-
-.header-result-page {
-  margin : auto;
-  margin-top : 2%;
-  width : 75%;
-  font-family : 'Open Sans Condensed', sans-serif;
-}
-
-.profile-canvas {
-  width : 75%;
-  min-height : 300px;
-  margin : auto;
-  margin-top : 2%;
-}
-
-.poll-panels {
-  width : 75%;
-  height : auto;
-  margin : auto;
-  margin-top : 2%;
+.modal,
+.modal .modal-dialog,
+.modal .modal-dialog .modal-content,
+.modal .modal-dialog .modal-content .modal-footer .btn {
+  border-radius: 0;
 }

@@ -7,6 +7,8 @@ html
         link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css')
         link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
         link(rel='stylesheet' href='/public/css/main.css')
+        link(rel='stylesheet' media='screen and (max-width: 600px)' href='/public/css/mobilizer.css')
+        link(rel='stylesheet' media='screen and (max-width: 800px) and (orientation: landscape)' href='/public/css/mobilizer.css')
         link(rel='icon' href='/public/img/favicon.ico' type='image/x-icon')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
@@ -14,33 +16,40 @@ html
     body
         script(src='/common/commonFunctions.js')
         div.container-fluid.top
-            div.row
-                div.col-sm-6.menu
+            div.row.menu
+                div.col-sm-6.section.text-center
                     a(href='/')
-                        h5 write and share a question if you have a GitHub account or just vote don't make noise
-                div.col-sm-6.menu(data-admin=admin)
+                        p write and share a question if you have a GitHub account or just vote don't make noise
+                div.col-sm-6.section.text-center(data-admin=admin)
                     if (id)
-                        div.name you may now ask #{username}
-                        a(href='/newpoll')
-                            div.btn new poll
-                        a(href='/result')
-                            div.btn your results
-                        a(href='/logout')
-                            div.btn logout
+                        a.user-link(href='/result') 
+                            p you may now ask 
+                                strong #{username}
+                        a.user-link(href='/newpoll')
+                            p 
+                                strong new poll
+                        a.user-link(href='/result')
+                            p 
+                                strong your results
+                        a.user-link(href='/logout')
+                            p 
+                                strong logout
                     else
                         a(href='/auth/github')
-                            h5 Login via GitHub
+                            p Login via GitHub
         div.container-fluid.line
         div.container-fluid.waiting-line
         div.container-fluid.main
             block content
         div.container-fluid.footer
-            div.row.foot
+            div.row.foot.text-center
                 div.col-sm-3
-                    a(href='https://github.com/BezginBack/fcc-315') erdem @ 2017  
+                    a(href='https://github.com/BezginBack/') erdem @ 2017  
                         i.fa.fa-github
-                div.col-sm-offset-7.col-sm-1.text-right
-                    a(href='/') home
-                div.col-sm-1.text-right
-                    a(href='/info') info
+                div.col-sm-offset-7.col-sm-1
+                    a(href='/') 
+                        strong home
+                div.col-sm-1
+                    a(href='/info') 
+                        strong info
         div.container-fluid.alert-div

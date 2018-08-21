@@ -1,0 +1,51 @@
+html, body {
+  height : auto;
+}
+
+.top {
+  height : auto;
+}
+
+.top .menu {
+  width: 100%;
+  height : auto;
+}
+
+.top .menu .section,
+.top .menu .section a {
+  display: block;
+  padding: 1%;
+}
+
+.top .menu .section .user-link {
+  float: none;
+}
+
+.main {
+  min-height: 700px;
+  height: auto;
+}
+
+.main .holder {
+  width: 100%;
+}
+
+.main .holder .footer-buttons,
+.main .holder .share-url,
+.main .holder .options-option,
+.main .holder .header-poll-page {
+  text-align: center;
+}
+
+.main .holder .bar-canvas {
+  width: 90%;
+}
+
+.main .holder .user-form {
+  width : 80%;
+}
+
+.footer {
+  height : auto;
+}
+

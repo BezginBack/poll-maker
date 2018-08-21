@@ -38,7 +38,7 @@ window.onload = function(){
                 $('.header-poll-page label').text(res[0].title);
                 $('.header-poll-page p').text(res[0].question);
                 for(var i = 0; i < res[0].options.length; i++){
-                    html += "<div class='row'><p class='text-muted each-option' data-index='" + i + "'>" + res[0].options[i].option + "</p></div>";
+                    html += "<div><p class='text-muted each-option' data-index='" + i + "'>" + res[0].options[i].option + "</p></div>";
                     $('body').append("<div class='hidetool'>result</div>");
                     optionsArray.push(res[0].options[i]);
                 }
@@ -66,7 +66,7 @@ window.onload = function(){
                 $('.footer-buttons').find('a').eq(1).on('click', function() {
                     getGraphic();
                 });
-                $('.footer-buttons').find('.row').eq(1).addClass('line');
+                $('.footer-buttons').find('.liner').eq(0).addClass('line');
                 $('.each-option').on('click', function(){
                     eachOptionClick(this);
                 });
@@ -263,6 +263,8 @@ var getGraphic = function(){
 };
 
 var grafize = function(opts, rates, sum){
+    $('.bar-canvas').empty();
+    $('.bar-canvas').append("<canvas id='canvas-bar'><canvas>");
     $('.options-option').css('display', 'none');
     $('.bar-canvas').css('display', 'block');
     Chart.defaults.global.defaultFontFamily = 'Open Sans Condensed';

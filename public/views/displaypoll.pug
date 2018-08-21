@@ -13,23 +13,24 @@ block content
         div.data-name(data-name=username)
     else
         div.data-name
-    div.container-fluid.header-poll-page(data-user=user data-title=polltitle)
-        div.row
-            label.text-info
-        div.row
-            p.text-muted
-    div.container-fluid.options-option
-    div.container-fluid.bar-canvas
-            canvas#canvas-bar
-    div.container-fluid.share-url
-        div.row
-            label.text-info
-            p.text-muted
-    div.container-fluid.footer-buttons
-        div.row
-            div.col-sm-2
-                a.btn
-            div.col-sm-2
-                a.btn
-            div.col-sm-2
-        div.row
+    div.holder
+        div.header-poll-page(data-user=user data-title=polltitle)
+            div
+                label.text-info
+            div
+                p.text-muted
+        div.options-option
+        div.bar-canvas
+                canvas#canvas-bar
+        div.share-url
+            div
+                label.text-info
+                p.text-muted
+        div.footer-buttons
+            div
+                div.col-sm-2
+                    a.btn
+                div.col-sm-2
+                    a.btn
+                div.col-sm-2
+            div.liner

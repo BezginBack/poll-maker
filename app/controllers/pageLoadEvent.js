@@ -7,7 +7,7 @@ window.onload = function(){
             gradientLoc : $('.waiting-line') 
         });
     };
-    var admin = $('.menu').eq(1).data('admin');
+    var admin = $('.section').eq(1).data('admin');
     ajaxFunctions.ready(ajaxFunctions.ajaxRequest('POST', url, data, wait, function (err, res) {
         if(err) {
             var e = new alertize({
@@ -27,7 +27,7 @@ window.onload = function(){
                     var lastvoted = new Date(res[i].lastvoted);
                     var html = "";
                     html += "<div class='panel'><div class='panel-heading'>";
-                    html += res[i].title;
+                    html += "<p>" + res[i].title + "</p>";
                         if(admin){
                             html += "<button type='button' class='close closer' data-id='" + res[i]._id + "'>&times;</button>";
                         }

@@ -6,10 +6,10 @@ var router = require('./app/router/router.js');
 var bodyParser = require("body-parser");
 var app = express();
 var port = process.env.PORT || 8080;
-require('dotenv').load();
+//require('dotenv').load();
 require('./app/config/passport')(passport);
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 app.set('views', './public/views');
@@ -20,6 +20,7 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({extended:false}));
