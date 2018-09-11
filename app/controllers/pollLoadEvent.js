@@ -44,7 +44,7 @@ window.onload = function(){
                 }
                 $('.options-option').append(html);
                 $('.share-url').find('label').eq(0).text('share url');
-                $('.share-url').find('p').eq(0).text("https://poll-maker-bezginback.c9users.io/" + res[0].user + "/" + res[0].title);
+                $('.share-url').find('p').eq(0).text(window.location.origin + "/" + res[0].user + "/" + res[0].title);
                 $('.share-url').find('p').eq(0).on('click', function(e){
                     e.stopPropagation();
                     if($('.pop-over').css('display') == 'none'){
